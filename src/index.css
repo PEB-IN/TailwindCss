@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Active Navigation Link */
+.active {
+  @apply text-cyan-500;
+}
+
+.slide .slick-slider .prev-arrow {
+  @apply absolute bottom-0 -left-3 top-12 z-[1] flex w-8 h-8 border-2 rounded-full bg-gray-300 items-center justify-center bg-none p-0 text-center opacity-70 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none hover:text-blue-500 hover:bg-white hover:border-gray-300 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none;
+}
+.slide .slick-slider .next-arrow {
+  @apply absolute bottom-0 -right-3 top-12 z-[1] flex w-8 h-8 border-2 rounded-full bg-gray-300 items-center justify-center bg-none p-0 text-center opacity-70 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none hover:text-blue-500 hover:bg-white hover:border-gray-300 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none;
+}
+
+.otherslide .slick-slider .prev-arrow {
+  @apply absolute bottom-0 -left-3 top-1/2 z-[1] flex w-8 h-8 border-2 rounded-full bg-gray-300 items-center justify-center bg-none p-0 text-center opacity-70 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none hover:text-blue-500 hover:bg-white hover:border-gray-300 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none;
+}
+.otherslide .slick-slider .next-arrow {
+  @apply absolute bottom-0 -right-3 top-1/2 z-[1] flex w-8 h-8 border-2 rounded-full bg-gray-300 items-center justify-center bg-none p-0 text-center opacity-70 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:no-underline hover:opacity-90 hover:outline-none hover:text-blue-500 hover:bg-white hover:border-gray-300 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none;
+}
+
+.socialmedia {
+  @apply mr-4 w-10 h-10 rounded-full cursor-pointer border-2 border-blue-400 text-center leading-height text-blue-500;
+}
+
+.active svg {
+  @apply text-cyan-500;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.bar:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
