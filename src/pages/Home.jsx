@@ -4,13 +4,13 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Products } from "../components/Common/slider/Settings";
-import bgimg from "./../assets/images/bg1.jpg";
+import bgimg from "../assets/images/bg1.jpg";
 import FeatureProduct from "../components/ProductTypes/FeatureProduct";
-import top1 from "./../assets/images/top1.jpg";
-import top2 from "./../assets/images/top2.jpg";
-import top3 from "./../assets/images/top3.jpg";
-import imag from "./../assets/images/imag1.jpg";
-import latest from "./../assets/images/Latest.jpg";
+import top1 from "../assets/images/top1.jpg";
+import top2 from "../assets/images/top2.jpg";
+import top3 from "../assets/images/top3.jpg";
+import imag from "../assets/images/imag1.jpg";
+import latest from "../assets/images/latest.jpg";
 import Card from "../components/Card/Card";
 import InstagramShop from "./InstagramShop";
 import Breadcrumbs from "../components/Header/Breadcrumbs";
@@ -44,7 +44,7 @@ const Home = () => {
     },
   ];
 
-  const Latest = [
+  const Latests = [
     {
       image: imag,
       name: " Almond Milk Soap",
@@ -136,7 +136,7 @@ const Home = () => {
         </div>
 
         <div className="container w-4/5 mt-12 justify-center flex flex-wrap m-auto">
-          {Latest.map((item, i) => (
+          {Latests.map((item, i) => (
             <div
               key={i}
               className="products sm:w-1/2 md:w-1/4 w-ful transition duration-500 ease-in-out hover:bg-gray-300 transform hover:-translate-y-1"
