@@ -93,19 +93,19 @@ export const Otherproduct = {
     {
       breakpoint: 1025,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 4,
       },
     },
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
       },
     },
     {
       breakpoint: 550,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         arrows: true,
       },
     },

@@ -42,7 +42,7 @@ const Card = () => {
           <a href="#">
             <img className="rounded-t-lg" src={item.image} alt="" />
           </a>
-          <div className="p-9">
+          <div className="p-9 bg-white">
             <p className="mb-2 font-bold text-gray-400">{item.day}</p>
             <a href="#">
               <div

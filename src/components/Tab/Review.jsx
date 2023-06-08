@@ -41,7 +41,7 @@ const Review = () => {
       <div>
         <div>
           <ul
-            className="flex flex-wrap justify-center mb-5 w-tabwidth"
+            className="flex flex-wrap justify-center mb-5 md:w-tabwidth"
             id="myTab"
             data-tabs-toggle="#myTabContent"
             role="tablist"
@@ -230,7 +230,7 @@ const Review = () => {
                   </div>
                   <a href="#">
                     <img
-                      className="p-8 h-60 object-contain w-full"
+                      className="sm:p-4 md:p-8 h-60 object-cover w-full"
                       src={item.image}
                     />
                   </a>

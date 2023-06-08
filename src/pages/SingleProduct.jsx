@@ -3,12 +3,6 @@ import singleimg from "../assets/images/singleimg.jpg";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Oneproduct } from "../components/Common/slider/Settings";
-// import {
-//   Accordion,
-//   AccordionBody,
-//   AccordionHeader,
-//   AccordionItem,
-// } from "reactstrap";
 import cream1 from "./../assets/images/cream1.jpg";
 import cream2 from "./../assets/images/cream2.jpg";
 import cream3 from "./../assets/images/cream3.jpg";
@@ -67,10 +61,10 @@ const SingleProduct = () => {
   return (
     <section>
       <div className="container-fluid bg-white mb-9">
-        <div className="row w-3/4 m-auto justify-center border-2 rounded shadow ">
+        <div className="row md:w-3/4 m-auto justify-center border-2 rounded shadow ">
           <div className="md:flex mt-14">
             <div className="md:w-2/3 relative">
-              <div className=" w-9 h-9 rounded-full border-2 pl-2 leading-9 right-12 mt-5 bg-gray-400 absolute left-auto ">
+              <div className=" w-9 h-9 rounded-full border-2 pl-2 leading-9 right-2 bg-gray-400 absolute left-auto ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -89,7 +83,7 @@ const SingleProduct = () => {
 
               <div className="mb-14">
                 <img
-                  className="m-auto h-single"
+                  className="m-auto h-single object-contain"
                   src={simple?.images && simple?.images[singleimage]}
                 />
               </div>
