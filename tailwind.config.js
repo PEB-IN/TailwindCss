@@ -13,6 +13,7 @@ module.exports = {
         offer: "195px",
         tabwidth: "47%",
         otherwidth: "78%",
+        tablewidth: "95%",
       },
       height: {
         single: "400px",

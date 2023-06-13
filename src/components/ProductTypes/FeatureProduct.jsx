@@ -26,8 +26,6 @@ const FeatureProduct = () => {
     });
   }, []);
 
-  const [totalvalues, setTotalValues] = useState([]);
-
   const AddtoWhishlist = (whislist_item) => {
     const new_whish = {
       id: whislist_item.id,
@@ -36,6 +34,12 @@ const FeatureProduct = () => {
       title: whislist_item.title,
       price: whislist_item.price,
     };
+
+    const vare = [
+      { id: 1, data: "name1", price: 24 },
+      { id: 2, data: "name2", price: 23 },
+      { id: 3, data: "name3", price: 26 },
+    ];
 
     // console.log(new_whish);
 
@@ -60,10 +64,6 @@ const FeatureProduct = () => {
     //   // for false condition
     //   setwhislist([...whislist, id]);
     // }
-    // const calculatePrice = new_whish.reduce(
-    //   (prevVal, currentVal) => prevVal + currentVal.price,
-    //   0
-    // );
 
     var exists = whislist.some((item) => item.id == whislist_item.id);
     if (exists) {
@@ -84,63 +84,129 @@ const FeatureProduct = () => {
     <>
       <h3>Testing</h3>
       {whislist.map((item, i) => (
-        <div key={i}>
-          <div className="border-2 flex m-auto mb-2 border-red-400 w-3/4">
-            <table className="w-full">
-              <thead>
-                <tr colSpan={2}>
-                  <th className="text-start pl-3"></th>
-                  <th className="text-end  pr-3">Brand : {item.brand}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr colSpan={2}>
-                  <td>{item.title}</td>
-                </tr>
-                <tr>
-                  <tr>
-                    <td className="pl-4">
-                      <img className="w-28" src={item.image} />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>Model : {item.title}</p>
-                      <p>
-                        Amount :
-                        <span className="text-blue-400 font-medium">
-                          {" "}
-                          ${item.price}
-                        </span>
-                      </p>
-                      <p>Total:{item.totalvalues}</p>
-                    </td>
-                  </tr>
-
-                  <td>
-                    <div onClick={() => Closedata(item.id)}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-6 h-6 mr-6 ml-auto"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <div
+          key={i}
+          className="flex border-2 bg-black text-white rounded-3xl py-4 shadow-md relative m-auto mb-2 w-3/4"
+        >
+          <div className="absolute right-0" onClick={() => Closedata(item.id)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6 mr-6 ml-auto"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </div>
+          <table className="w-tablewidth" id="cart-table">
+            <thead>
+              <tr>
+                <th className="text-center w-1/4">Item</th>
+                <th className="text-start w-1/4">Detail</th>
+                <th className="text-start w-1/4">Price</th>
+                <th className="text-start w-1/4">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img className="w-28 m-auto" src={item.image}></img>
+                </td>
+                <td>
+                  <p>Brand : {item.brand}</p>
+                  <p>Model : {item.title}</p>
+                </td>
+                <td>{item.price}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td className="text-end" colSpan="3">
+                  Total:{" "}
+                  {whislist.reduce((total, item) => {
+                    return total + item.price;
+                  }, 0)}
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+          {/* <table className="w-full">
+            <thead>
+              <tr>
+                <th className="h1">Item</th>
+                <th className="h2">Price</th>
+                <th className="h3">Qty</th>
+                <th className="h5">SubTotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td className="pl-4">
+                            <img className="w-28" src={item.image} />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="text-end  pr-3">
+                            Brand : {item.brand}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>Model : {item.title}</p>
+
+                            <p>Total:{item.totalvalues}</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>
+                              Amount :
+                              <span className="text-blue-400 font-medium">
+                                ${item.price}
+                              </span>
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <p>{item.totalprice}</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table> */}
         </div>
       ))}
+
+      <div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                total price :
+                {whislist.reduce((total, item) => {
+                  return total + item.price;
+                }, 0)}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div>
         <p>count whishlist : {whislist.length}</p>
       </div>
