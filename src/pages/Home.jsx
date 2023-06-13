@@ -14,8 +14,11 @@ import latest from "../assets/images/latest.jpg";
 import Card from "../components/Card/Card";
 import InstagramShop from "./InstagramShop";
 import Breadcrumbs from "../components/Header/Breadcrumbs";
+import TabProduct from "../components/Tab/TabProduct";
 
 const Home = () => {
+  const [cart, setCart] = useState([]);
+
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -66,6 +69,7 @@ const Home = () => {
       amount: "$32.00",
     },
   ];
+
   return (
     <>
       <section>
@@ -105,6 +109,7 @@ const Home = () => {
             </button>
           </div>
         </div>
+
         <div className="mb-3">
           <h4 className="text-center font-bold text-lg" data-aos="fade-down">
             Featured Products
@@ -186,7 +191,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section id="blog">
         <div className="bg-blogcolor mt-9">
           <div className="pt-6">
             <h4 className="text-center mt-4 font-bold text-lg">Our Blog</h4>

@@ -10,7 +10,7 @@ module.exports = {
         cart: "#009eff",
       },
       width: {
-        offer: "180px",
+        offer: "195px",
         tabwidth: "47%",
         otherwidth: "78%",
       },

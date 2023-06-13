@@ -7,6 +7,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import SingleProduct from "./pages/SingleProduct";
 import Testing from "./pages/Testing";
+import ScrollToTop from "./services/ScrollToTop";
+import Card from "./components/Card/Card";
 
 const App = () => {
   useEffect(() => {
@@ -16,11 +18,13 @@ const App = () => {
 
   return (
     <div className="flex-1 h-fit">
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/singleproduct/:id" element={<SingleProduct />} />
         <Route path="/testing" element={<Testing />} />
+        <Route path="/card" element={<card />} />
       </Routes>
       <Footer />
     </div>

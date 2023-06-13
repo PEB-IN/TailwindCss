@@ -1,21 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-const TabProduct = (props) => {
-  const [addcart, setAddCart] = useState();
 
-  const whislist = () => {
-    console.log("ckeck cart");
-  };
-
+const TabProduct = ({ item, AddtoWhishlist }) => {
   return (
     <>
       <div className="products w-full h-2/4 sm:w-1/2 md:w-1/4 bg-white transition duration-500 ease-in-out hover:bg-gray-400 transform hover:-translate-y-1">
-        <Link to={`/singleproduct/${props.item.id}`}>
+        <Link to={`/singleproduct/${item.id}`}>
           <div className="text-right">
             <Link
               to={"#"}
-              onClick={whislist}
+              onClick={() => AddtoWhishlist(item)}
               className="bg-gray-300 w-9 h-9 text-white rounded-full relative mr-auto inline-block p-1.5 top-4 right-4"
             >
               <svg
@@ -37,18 +31,18 @@ const TabProduct = (props) => {
 
           <img
             className="p-4 h-60 object-contain w-full"
-            src={props.item.thumbnail}
+            src={item.thumbnail}
             alt="product image"
           />
 
           <div className="px-5 pb-5">
             <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
-              {props.item.brand}
+              {item.brand}
             </h5>
 
             <div className="flex items-center justify-between">
               <span className="font-bold text-base text-gray-500 dark:text-white">
-                ${props.item.price}
+                ${item.price}
               </span>
             </div>
           </div>

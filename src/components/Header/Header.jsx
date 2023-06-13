@@ -6,7 +6,6 @@ import Logo from "../../assets/images/logo.png";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const handleclick = () => {
-    console.log("click");
     setOpen(!open);
     return;
   };
@@ -16,7 +15,7 @@ const Header = () => {
       <nav className="inset-x-0">
         <div className="justify-between flex p-4">
           <div className="sm:w-2/12 ">
-            <Link to="#" className="items-center">
+            <Link to="/" className="items-center">
               <img src={Logo} className="h-8 mr-3" alt="Figma Logo" />
             </Link>
           </div>
@@ -65,12 +64,12 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#blog"
                   className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:text-white hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
                 <Link

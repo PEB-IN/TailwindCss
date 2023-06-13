@@ -21,7 +21,6 @@ const SingleProduct = () => {
 
   const [singleimage, setsingleimage] = useState(0);
   const params = useParams();
-  console.log(params);
 
   const changeimg = (indesid) => {
     setsingleimage(indesid);
@@ -33,7 +32,6 @@ const SingleProduct = () => {
       .get(`https://dummyjson.com/products/${params.id}`)
       .then((res) => {
         setSimple(res.data);
-        console.log(res.data);
       })
       .catch((error) => {
         console.error(error);
@@ -61,7 +59,7 @@ const SingleProduct = () => {
   return (
     <section>
       <div className="container-fluid bg-white mb-9">
-        <div className="row md:w-3/4 m-auto justify-center border-2 rounded shadow ">
+        <div className="row w-3/4 m-auto justify-center border-2 rounded shadow ">
           <div className="md:flex mt-14">
             <div className="md:w-2/3 relative">
               <div className=" w-9 h-9 rounded-full border-2 pl-2 leading-9 right-2 bg-gray-400 absolute left-auto ">
@@ -128,14 +126,17 @@ const SingleProduct = () => {
                   <i className="fa fa-star mr-1" aria-hidden="true"></i>
                   <i className="fa fa-star-o mr-2" aria-hidden="true"></i>
                 </span>
-                <span>{simple.rating}</span>
+                <span>{simple.rating} Rating</span>
               </div>
-              <div className="mb-2 py-4 text-xl">
+              <div className="py-4 text-xl">
                 <span className="mr-4 font-bold">${simple.price}</span>
-                <span className="line-through">$280</span>
+                <span className="line-through text-red-500">$280</span>
               </div>
-              <p className="mb-3 py-1 w-offer font-medium border-2 bg-green-200">
-                Discount Offer: {simple.discountPercentage} %
+              <p className="mb-3 p-1 w-offer text-green-600 font-medium">
+                {simple.discountPercentage}% :off
+              </p>
+              <p className="mb-3 p-1 text-center w-24 font-medium border-2 bg-green-200">
+                Stock : {simple.stock}
               </p>
               <div className=" mb-8">
                 <h4 className="font-medium mb-2">Color</h4>
@@ -190,7 +191,7 @@ const SingleProduct = () => {
 
                   <span> Add To Wishlist</span>
                 </button>
-                <button className="bg-cart hover:bg-blue-500 mb-3 text-white font-bold py-2 px-8 rounded">
+                <button className="bg-cart hover:bg-blue-500 mb-3 text-white font-bold py-2 mr-4 px-4 rounded">
                   <span>Add To Cart</span>
                 </button>
               </div>
@@ -407,20 +408,20 @@ const SingleProduct = () => {
                       aria-hidden="true"
                     ></i>
                   </a>
-                  <a>
+                  <a href="#">
                     <i
                       className="fa fa-facebook-official cursor-pointer mr-4 w-10 h-10 rounded-full border-2 bg-gradient-to-r from-green-400 to-blue-500 text-white text-center leading-height"
                       aria-hidden="true"
                     ></i>
                   </a>
 
-                  <a>
+                  <a href="#">
                     <i
                       className="fa fa-linkedin-square  socialmedia leading-height"
                       aria-hidden="true"
                     ></i>
                   </a>
-                  <a>
+                  <a href="#">
                     <i
                       className="fa fa-ellipsis-h socialmedia leading-height"
                       aria-hidden="true"
