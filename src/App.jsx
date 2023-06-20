@@ -9,6 +9,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Testing from "./pages/Testing";
 import ScrollToTop from "./services/ScrollToTop";
 import Card from "./components/Card/Card";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   useEffect(() => {
@@ -24,7 +25,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/singleproduct/:id" element={<SingleProduct />} />
         <Route path="/testing" element={<Testing />} />
-        <Route path="/card" element={<card />} />
+        <Route path="/card" element={<Card />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>

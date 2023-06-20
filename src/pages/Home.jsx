@@ -15,6 +15,8 @@ import Card from "../components/Card/Card";
 import InstagramShop from "./InstagramShop";
 import Breadcrumbs from "../components/Header/Breadcrumbs";
 import TabProduct from "../components/Tab/TabProduct";
+import ContextCard from "../components/Context/ContextCard";
+import ContextValue from "../components/Tab/ContextValue";
 
 const Home = () => {
   const [cart, setCart] = useState([]);
@@ -108,6 +110,14 @@ const Home = () => {
               Shop Now
             </button>
           </div>
+        </div>
+
+        {/* Testing CONTEXT API */}
+
+        <div className="text-xl font-bold text-center mb-12">
+          <p>Context API</p>
+          <ContextValue />
+          <ContextCard />
         </div>
 
         <div className="mb-3">

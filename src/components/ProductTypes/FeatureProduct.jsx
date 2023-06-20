@@ -35,36 +35,6 @@ const FeatureProduct = () => {
       price: whislist_item.price,
     };
 
-    const vare = [
-      { id: 1, data: "name1", price: 24 },
-      { id: 2, data: "name2", price: 23 },
-      { id: 3, data: "name3", price: 26 },
-    ];
-
-    // console.log(new_whish);
-
-    // var whilslist = [
-    //   {
-    //     id: 1,
-    //     name: item.name,
-    //     brand: item.brand,
-    //   },
-    //   {
-    //     id: 2,
-    //     name: item.name,
-    //     brand: item.brand,
-    //   },
-    // ];
-
-    // var exists = whislist.some((item) => item == id);
-    // if (exists) {
-    //   // for true condition
-    //   setwhislist(whislist.filter((item) => item != id));
-    // } else {
-    //   // for false condition
-    //   setwhislist([...whislist, id]);
-    // }
-
     var exists = whislist.some((item) => item.id == whislist_item.id);
     if (exists) {
       // for true condition
@@ -136,60 +106,6 @@ const FeatureProduct = () => {
               </tr>
             </tfoot>
           </table>
-          {/* <table className="w-full">
-            <thead>
-              <tr>
-                <th className="h1">Item</th>
-                <th className="h2">Price</th>
-                <th className="h3">Qty</th>
-                <th className="h5">SubTotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td className="pl-4">
-                            <img className="w-28" src={item.image} />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="text-end  pr-3">
-                            Brand : {item.brand}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p>Model : {item.title}</p>
-
-                            <p>Total:{item.totalvalues}</p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p>
-                              Amount :
-                              <span className="text-blue-400 font-medium">
-                                ${item.price}
-                              </span>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <p>{item.totalprice}</p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table> */}
         </div>
       ))}
 
